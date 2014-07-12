@@ -16,8 +16,6 @@ class NotificationServiceProvider extends ServiceProvider {
         {
             return $this->app->make('Szykra\Notifications\FlashNotifier');
         });
-
-        $this->app->bind('Szykra\Notifications\NotifyBuilder', 'Szykra\Notifications\BootstrapAlertBuilder');
-    }
+        }
 
 }

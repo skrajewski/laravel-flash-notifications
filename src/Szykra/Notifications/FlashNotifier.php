@@ -10,70 +10,65 @@ class FlashNotifier {
     protected $session;
 
     /**
-     * @var NotifyBuilder
-     */
-    protected $builder;
-
-    /**
      * @var array
      */
     protected $notifies = [];
 
     /**
      * @param Store         $session
-     * @param NotifyBuilder $builder
      */
-    public function __construct(Store $session, NotifyBuilder $builder)
+    public function __construct(Store $session)
     {
         $this->session = $session;
-        $this->builder = $builder;
     }
 
+
     /**
-     * Set default alert
+     * Set information alert
      *
-     * @param        $message
-     * @param string $level
+     * @internal param $title
+     * @internal param $message
      * @return $this
      */
-    public function message($message, $level = 'info')
+    public function info()
     {
-        $this->notifies[] = ['title' => '', 'message' => $message, 'level' => $level];
-
-        return $this;
+        return $this->message(func_get_args(), "info");
     }
 
     /**
      * Set success alert
      *
-     * @param $message
+     * @internal param $title
+     * @internal param $message
      * @return $this
      */
-    public function success($message)
+    public function success()
     {
-        return $this->message($message, "success");
+        return $this->message(func_get_args(), "success");
     }
 
     /**
      * Set warning alert
      *
-     * @param $message
+     * @internal param $title
+     * @internal param $message
      * @return $this
      */
-    public function warning($message)
+    public function warning()
     {
-        return $this->message($message, "warning");
+        return $this->message(func_get_args(), "warning");
     }
 
     /**
      * Set error alert
      *
-     * @param $message
+     * @internal param $title
+     * @internal param $message
      * @return $this
      */
-    public function error($message)
+    public function error()
     {
-        return $this->message($message, "danger");
+        return $this->message(func_get_args(), "danger");
     }
 
     /**
@@ -81,13 +76,36 @@ class FlashNotifier {
      */
     public function push()
     {
-        foreach($this->notifies as $notify)
-        {
-            $alerts[] = $this->builder->build($notify['message'], ['level' => $notify['level']]);
-        }
-
-        $this->session->flash('flash.alert', implode('', $alerts));
+        $this->session->flash('flash.alerts', $this->notifies);
 
         $this->notifies = [];
+    }
+
+    /**
+     * Expand $args and set alert to notify table
+     *
+     * @param $args
+     * @param $level
+     * @return $this
+     */
+    protected function message($args, $level)
+    {
+
+
+        switch(count($args))
+        {
+            case 2:
+                $title = $args[0];
+                $message = $args[1];
+                break;
+            case 1:
+                $title = '';
+                $message = $args[0];
+                break;
+        }
+
+        $this->notifies[] = ['title'   => $title, 'message' => $message, 'level'   => $level];
+
+        return $this;
     }
 } 
