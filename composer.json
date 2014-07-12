@@ -1,6 +1,7 @@
 {
     "name": "szykra/notifications",
-    "description": "",
+    "version": "0.1.0",
+    "description": "Easy way to display Flash Notifications in Laravel 4.",
     "authors": [
         {
             "name": "Szymon Krajewski",
