@@ -9,7 +9,7 @@ Flash Notifications Helper for Laravel 4
 
 Add dependency to your `composer.json` file and run `composer update`.a
 
-```json
+```
 require: {
     "szykra/notifications": "0.1.*
 }
@@ -50,14 +50,14 @@ You can push flash message ever you need by facade `Flash`. It provides 4 alert 
 * warning
 * info
 
-```
+```php
 Flash::info('Your alert message here!')->push();
 ```
 
-Method `push()` exists because you can push more than one event at the same time. __See below__.
+Method `push()` exists because you can push more than one alert at the same time. _See below_.
 
-Every alert method takes 1 or 2 arguments. If you give one parameter it will __message__. If you provide two parameters,
-first will be __title__ and second will be __message__.
+Every alert method takes 1 or 2 arguments. If you give one parameter it will be _message_. If you provide two parameters,
+first will be _title_ and second will be _message_.
 
 ```php
 Flash::success('User has been updated successfully.');
@@ -68,7 +68,7 @@ Flash::push(); // Push all alerts
 ## Custom alert view
 
 Package default provides bootstrap ready view for alerts. You can define own style for it. 
-Just create new __blade__ template file!
+Just create new _blade_ template file!
 
 ```php
 @if(Session::has('flash.alerts'))
@@ -98,12 +98,12 @@ All alerts will be in `flash.alerts` session variable. Single alert looks like:
 ]
 ```
 
-__Level__ for all alerts are following:
+_Level_ for all alerts are following:
 
-* `success` has level __success__
-* `error` has level __danger__
-* `warning` has level __warning__
-* `info` has level __info__
+* `Flash::success` has level _success_
+* `Flash::error` has level _danger_
+* `Flash::warning` has level _warning_
+* `Flash::info` has level _info_
 
 ## License
 
