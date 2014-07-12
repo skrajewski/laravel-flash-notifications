@@ -1,6 +1,8 @@
 {
     "name": "szykra/notifications",
     "version": "0.1.0",
+    "license": "MIT",
+    "keywords": ["laravel", "flash", "alerts", "bootstrap"],
     "description": "Easy way to display Flash Notifications in Laravel 4.",
     "authors": [
         {
