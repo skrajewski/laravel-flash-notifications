@@ -7,7 +7,7 @@ Flash Notifications Helper for Laravel 4
 
 ### Install via composer
 
-Add dependency to your `composer.json` file and run `composer update`.a
+Add dependency to your `composer.json` file and run `composer update`.
 
 ```
 require: {
