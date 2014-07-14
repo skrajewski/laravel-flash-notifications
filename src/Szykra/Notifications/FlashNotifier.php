@@ -35,6 +35,7 @@ class FlashNotifier {
         return $this->message(func_get_args(), "info");
     }
 
+
     /**
      * Set success alert
      *
@@ -46,6 +47,7 @@ class FlashNotifier {
     {
         return $this->message(func_get_args(), "success");
     }
+
 
     /**
      * Set warning alert
@@ -59,6 +61,7 @@ class FlashNotifier {
         return $this->message(func_get_args(), "warning");
     }
 
+
     /**
      * Set error alert
      *
@@ -71,6 +74,7 @@ class FlashNotifier {
         return $this->message(func_get_args(), "danger");
     }
 
+
     /**
      * Build all alerts and push to session
      */
@@ -81,6 +85,7 @@ class FlashNotifier {
         $this->notifies = [];
     }
 
+
     /**
      * Expand $args and set alert to notify table
      *
@@ -90,8 +95,6 @@ class FlashNotifier {
      */
     protected function message($args, $level)
     {
-
-
         switch(count($args))
         {
             case 2:
@@ -108,4 +111,5 @@ class FlashNotifier {
 
         return $this;
     }
+
 } 

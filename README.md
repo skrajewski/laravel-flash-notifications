@@ -1,4 +1,4 @@
-Laravel Flash Notifications 0.1.0
+Laravel Flash Notifications 0.1.1
 ===========================
 
 Flash Notifications Helper for Laravel 4
@@ -27,19 +27,15 @@ Add ServiceProvider and Facade to your `config/app.php` file:
 'Flash' => 'Szykra\Notifications\Flash'
 ```
 
-### Publish and include default alert view to your views directory
+### Include default alert view to your layout
 
-Package default provides bootstrap ready alert view. To publish it use `artisan`.
-
-```
-php artisan view:publish szykra/notifications
-```
-
-Now you can include alert view in your blade files:
+Package default provides _bootstrap ready_ alert view. Just include `notifications::flash` file to your main layout in blade:
 
 ```php
-@include('packages.szykra.notifications.flash')
+@include('notifications::flash')
 ````
+
+You can create own container for flash notifications with own custom styles. See _Custom alert view_ section.
 
 ## Usage
 
@@ -67,7 +63,7 @@ Flash::push(); // Push all alerts
 
 ## Custom alert view
 
-Package default provides bootstrap ready view for alerts. You can define own style for it. 
+Package default provides _bootstrap ready_ view for alerts. You can define own style for it. 
 Just create new _blade_ template file!
 
 ```php
