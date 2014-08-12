@@ -1,4 +1,4 @@
-Laravel Flash Notifications 0.1.1
+Laravel Flash Notifications 0.2.0
 ===========================
 
 Flash Notifications Helper for Laravel 4
@@ -11,13 +11,13 @@ Add dependency to your `composer.json` file and run `composer update`.
 
 ```
 require: {
-    "szykra/notifications": "0.1.*
+    "szykra/notifications": "0.2.*
 }
 ```
 
 ### Configure Laravel
 
-Add ServiceProvider and Facade to your `config/app.php` file:
+Add ServiceProvider and Alias _(Facade)_ to your `config/app.php` file:
 
 ```php
 'Szykra\Notifications\NotificationServiceProvider'
@@ -47,10 +47,15 @@ You can push flash message ever you need by facade `Flash`. It provides 4 alert 
 * info
 
 ```php
-Flash::info('Your alert message here!')->push();
+Flash::info('Your alert message here!');
 ```
 
-Method `push()` exists because you can push more than one alert at the same time. _See below_.
+~~Method `push()` exists because you can push more than one alert at the same time. _See below_.~~
+
+
+>__Explain:__
+From version 0.2 method `push()` is unnecessary and is marked as _deprecated_ in public API. Flash messages will be automaticaly sended to session store instantly after call once of these methods.
+
 
 Every alert method takes 1 or 2 arguments. If you give one parameter it will be _message_. If you provide two parameters,
 first will be _title_ and second will be _message_.
@@ -58,7 +63,6 @@ first will be _title_ and second will be _message_.
 ```php
 Flash::success('User has been updated successfully.');
 Flash::error('Oh snap!', 'Something went wrong. Please try again for a few seconds.');
-Flash::push(); // Push all alerts
 ```
 
 ## Custom alert view

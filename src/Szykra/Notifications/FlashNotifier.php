@@ -76,13 +76,12 @@ class FlashNotifier {
 
 
     /**
-     * Build all alerts and push to session
+     * Push notifies array to session
+     * @deprecated from 0.2 - in the future will be protected
      */
     public function push()
     {
         $this->session->flash('flash.alerts', $this->notifies);
-
-        $this->notifies = [];
     }
 
 
@@ -105,9 +104,13 @@ class FlashNotifier {
                 $title = '';
                 $message = $args[0];
                 break;
+            default:
+                throw new \InvalidArgumentException('Cannot resolve arguments. Please provide one parameter as `message` or two parameters as `title` and `message`.');
         }
 
-        $this->notifies[] = ['title'   => $title, 'message' => $message, 'level'   => $level];
+        $this->notifies[] = ['title' => $title, 'message' => $message, 'level' => $level];
+
+        $this->push();
 
         return $this;
     }
