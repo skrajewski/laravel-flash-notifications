@@ -1,7 +1,7 @@
-Laravel Flash Notifications 0.2.0
+Laravel Flash Notifications 0.3.0
 ===========================
 
-Flash Notifications Helper for Laravel 4
+Flash Notifications Helper for Laravel 5
 
 ## Install
 
@@ -11,7 +11,7 @@ Add dependency to your `composer.json` file and run `composer update`.
 
 ```
 require: {
-    "szykra/notifications": "0.2.*
+    "szykra/notifications": "0.3.*@dev
 }
 ```
 
@@ -51,10 +51,6 @@ Flash::info('Your alert message here!');
 ```
 
 ~~Method `push()` exists because you can push more than one alert at the same time. _See below_.~~
-
-
->__Explain:__
-From version 0.2 method `push()` is unnecessary and is marked as _deprecated_ in public API. Flash messages will be automaticaly sended to session store instantly after call once of these methods.
 
 
 Every alert method takes 1 or 2 arguments. If you give one parameter it will be _message_. If you provide two parameters,
