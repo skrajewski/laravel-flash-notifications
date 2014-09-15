@@ -15,7 +15,7 @@ class FlashNotifier {
     protected $notifies = [];
 
     /**
-     * @param Store         $session
+     * @param Store $session
      */
     public function __construct(Store $session)
     {
@@ -77,9 +77,8 @@ class FlashNotifier {
 
     /**
      * Push notifies array to session
-     * @deprecated from 0.2 - in the future will be protected
      */
-    public function push()
+    protected function push()
     {
         $this->session->flash('flash.alerts', $this->notifies);
     }
@@ -115,4 +114,4 @@ class FlashNotifier {
         return $this;
     }
 
-} 
+}
