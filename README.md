@@ -1,4 +1,4 @@
-Laravel Flash Notifications 0.2.0
+Laravel Flash Notifications 0.2.1
 ===========================
 
 Flash Notifications Helper for Laravel 4
@@ -56,9 +56,7 @@ Flash::info('Your alert message here!');
 >__Explain:__
 From version 0.2 method `push()` is unnecessary and is marked as _deprecated_ in public API. Flash messages will be automaticaly sended to session store instantly after call once of these methods.
 
-
-Every alert method takes 1 or 2 arguments. If you give one parameter it will be _message_. If you provide two parameters,
-first will be _title_ and second will be _message_.
+Every alert method takes 1 or 2 arguments. If you give one parameter it will be _message_. If you provide two parameters, first will be _title_ and second will be _message_.
 
 ```php
 Flash::success('User has been updated successfully.');

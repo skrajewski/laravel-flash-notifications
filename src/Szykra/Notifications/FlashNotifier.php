@@ -22,12 +22,9 @@ class FlashNotifier {
         $this->session = $session;
     }
 
-
     /**
      * Set information alert
      *
-     * @internal param $title
-     * @internal param $message
      * @return $this
      */
     public function info()
@@ -35,12 +32,9 @@ class FlashNotifier {
         return $this->message(func_get_args(), "info");
     }
 
-
     /**
      * Set success alert
      *
-     * @internal param $title
-     * @internal param $message
      * @return $this
      */
     public function success()
@@ -48,12 +42,9 @@ class FlashNotifier {
         return $this->message(func_get_args(), "success");
     }
 
-
     /**
      * Set warning alert
      *
-     * @internal param $title
-     * @internal param $message
      * @return $this
      */
     public function warning()
@@ -61,19 +52,15 @@ class FlashNotifier {
         return $this->message(func_get_args(), "warning");
     }
 
-
     /**
      * Set error alert
      *
-     * @internal param $title
-     * @internal param $message
      * @return $this
      */
     public function error()
     {
         return $this->message(func_get_args(), "danger");
     }
-
 
     /**
      * Push notifies array to session
@@ -83,7 +70,6 @@ class FlashNotifier {
     {
         $this->session->flash('flash.alerts', $this->notifies);
     }
-
 
     /**
      * Expand $args and set alert to notify table
@@ -115,4 +101,4 @@ class FlashNotifier {
         return $this;
     }
 
-} 
+}
