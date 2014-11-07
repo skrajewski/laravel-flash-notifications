@@ -1,4 +1,4 @@
-Laravel Flash Notifications 0.3.0
+Laravel Flash Notifications
 ===========================
 
 Flash Notifications Helper for Laravel 5
