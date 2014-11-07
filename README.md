@@ -52,9 +52,7 @@ Flash::info('Your alert message here!');
 
 ~~Method `push()` exists because you can push more than one alert at the same time. _See below_.~~
 
-
-Every alert method takes 1 or 2 arguments. If you give one parameter it will be _message_. If you provide two parameters,
-first will be _title_ and second will be _message_.
+Every alert method takes 1 or 2 arguments. If you give one parameter it will be _message_. If you provide two parameters, first will be _title_ and second will be _message_.
 
 ```php
 Flash::success('User has been updated successfully.');

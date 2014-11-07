@@ -1,6 +1,6 @@
 {
     "name": "szykra/notifications",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "license": "MIT",
     "keywords": ["laravel", "flash", "notifications", "alerts", "bootstrap", "messages"],
     "description": "Easy way to display Flash Notifications in Laravel 5.",
@@ -26,7 +26,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.3-dev"
+            "dev-master": "0.3.x-dev"
         }
     },
     "minimum-stability": "dev"
