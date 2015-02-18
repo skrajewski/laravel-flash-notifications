@@ -1,6 +1,6 @@
 {
-    "name": "szykra/notifications",
-    "version": "0.3.1",
+    "name": "szykra/laravel-flash-notifications",
+    "version": "0.3.2",
     "license": "MIT",
     "keywords": ["laravel", "flash", "notifications", "alerts", "bootstrap", "messages"],
     "description": "Easy way to display Flash Notifications in Laravel 5.",
@@ -12,9 +12,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.0.*@dev",
-        "illuminate/session": "5.0.*@dev",
-        "illuminate/contracts": "5.0.*@dev"
+        "illuminate/support": "~5.0",
+        "illuminate/session": "~5.0",
+        "illuminate/contracts": "~5.0"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0"
@@ -24,10 +24,8 @@
             "Szykra\\Notifications": "src/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.3.x-dev"
-        }
-    },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable",
+    "replace": {
+        "szykra/notifications": "self.version"
+    }
 }
