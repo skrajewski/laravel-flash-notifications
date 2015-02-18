@@ -11,7 +11,7 @@ Add dependency to your `composer.json` file and run `composer update`.
 
 ```
 require: {
-    "szykra/notifications": "0.3.*@dev"
+    "szykra/laravel-flash-notifications": "~0.3"
 }
 ```
 
@@ -101,4 +101,4 @@ _Level_ for all alerts are following:
 
 ## License
 
-The MIT License. Copyright (c) 2014 Szymon Krajewski.
+The MIT License. Copyright (c) 2014 - 2015 Szymon Krajewski.
