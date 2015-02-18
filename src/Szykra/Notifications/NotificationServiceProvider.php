@@ -4,7 +4,6 @@ use Illuminate\Support\ServiceProvider;
 
 class NotificationServiceProvider extends ServiceProvider {
 
-
     /**
      * Register the service provider.
      *
@@ -23,7 +22,7 @@ class NotificationServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('szykra/notifications');
+        $this->loadViewsFrom(__DIR__.'/../../views', 'notifications');
     }
 
 }
