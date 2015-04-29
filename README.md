@@ -1,8 +1,9 @@
 Laravel Flash Notifications
 ===========================
-![version](https://img.shields.io/packagist/v/szykra/laravel-flash-notifications.svg?style=flat-square)
-![license](https://img.shields.io/packagist/l/szykra/laravel-flash-notifications.svg?style=flat-square)
-![downloads](https://img.shields.io/packagist/dm/szykra/laravel-flash-notifications.svg?style=flat-square)
+[![build](https://img.shields.io/travis/skrajewski/laravel-flash-notifications.svg)](https://travis-ci.org/skrajewski/laravel-flash-notifications)
+[![version](https://img.shields.io/packagist/v/szykra/laravel-flash-notifications.svg)](https://packagist.org/packages/szykra/laravel-flash-notifications)
+![license](https://img.shields.io/packagist/l/szykra/laravel-flash-notifications.svg)
+![downloads](https://img.shields.io/packagist/dm/szykra/laravel-flash-notifications.svg)
 
 Flash Notifications Helper for Laravel 5
 
