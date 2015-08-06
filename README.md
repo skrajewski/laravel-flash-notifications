@@ -101,7 +101,7 @@ Just create new _blade_ template file!
       });
   </script>
 ```
-*used in [Laracast - Flash Messaging](https://laracasts.com/series/laravel-5-fundamentals/episodes/20)
+used in [Laracast - Flash Messaging](https://laracasts.com/series/laravel-5-fundamentals/episodes/20)
 
 *[jQuery](https://jquery.com) has to be included!*
 
