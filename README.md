@@ -65,19 +65,25 @@ Flash::error('Oh snap!', 'Something went wrong. Please try again for a few secon
 
 ## Custom alert view
 
-Package default provides _bootstrap ready_ view for alerts. You can define own style for it. 
+Package default provides _bootstrap ready_ view for alerts. You can define own style for it.
 Just create new _blade_ template file!
 
 ```php
 @if(Session::has('flash.alerts'))
     @foreach(Session::get('flash.alerts') as $alert)
 
-        <div class='alert alert-{{ $alert['level'] }}'>
-            <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+          @if($alert['important'])
+            <div class='alert alert-{{ $alert['level'] }} alert-important'>
 
-            @if( ! empty($alert['title']))
-                <div><strong>{{ $alert['title'] }}</strong></div>
-            @endif
+            <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+          @else
+            <div class='alert alert-{{ $alert['level'] }}'>
+
+          @endif
+
+          @if( ! empty($alert['title']))
+              <div><strong>{{ $alert['title'] }}</strong></div>
+          @endif
 
             {{ $alert['message'] }}
         </div>
@@ -86,10 +92,34 @@ Just create new _blade_ template file!
 @endif
 ```
 
+*Example Script for a Basic slideUp*
+
+```javascript
+  <script>
+      $( document).ready( function(){
+        $('div.alert').not('.alert-important').delay(3000).slideUp(300);
+      });
+  </script>
+```
+*used in [Laracast - Flash Messaging](https://laracasts.com/series/laravel-5-fundamentals/episodes/20)
+
+*[jQuery](https://jquery.com) has to be included!*
+
+###### Including jQuery
+* [CDN](https://code.jquery.com/jquery-2.1.4.js)
+* Composer:
+  * ``` "require": {
+        "components/jquery": "1.9.*"
+        }```
+* Bower:
+  * ```bower install jQuery```
+* [GitHub/jQuery](https://github.com/jquery)
+
 All alerts will be in `flash.alerts` session variable. Single alert looks like:
 
 ```php
 [
+  'important' => TRUE
   'title' => 'Title',
   'message' => 'Example message',
   'level' => 'success'
