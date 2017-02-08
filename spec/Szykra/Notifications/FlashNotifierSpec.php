@@ -18,14 +18,19 @@ class FlashNotifierSpec extends ObjectBehavior
         $this->shouldHaveType('Szykra\Notifications\FlashNotifier');
     }
 
-    function it_should_throw_exception_when_provide_more_than_two_parameters()
+    function it_should_throw_exception_when_provide_more_than_three_parameters()
     {
-    	$this->shouldThrow('\InvalidArgumentException')->duringInfo("Dummy title", "Dummy message", "I have no idea what it is...");	
+    	$this->shouldThrow('\InvalidArgumentException')->duringInfo(TRUE, "Dummy title", "Dummy message", "I have no idea what it is...");
+    }
+
+		function it_should_throw_exception_when_no_boolean_value_provide()
+    {
+    	$this->shouldThrow('\InvalidArgumentException')->duringInfo("Dummy title", "Dummy message", "I have no idea what it is...");
     }
 
     function it_should_set_flash_to_session_store(Store $session)
     {
-    	$session->flash('flash.alerts', [['title' => '', 'message' => 'Test message', 'level' => 'info']])->shouldBeCalled();
+    	$session->flash('flash.alerts', [['important' => TRUE, 'title' => '', 'message' => 'Test message', 'level' => 'info']])->shouldBeCalled();
 
     	$this->info('Test message');
     }
