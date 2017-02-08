@@ -103,6 +103,57 @@ _Level_ for all alerts are following:
 * `Flash::warning` has level _warning_
 * `Flash::info` has level _info_
 
+## IDE Autocomplete helper
+
+IF you are using a [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper), just add this into _ide_helper.php BEFORE last brace
+ 
+ ```php
+    class Flash extends \Szykra\Notifications\Flash {
+ 
+         /**
+          * Show one time the success-level message
+          * @param $text_or_title
+          * @param string $text
+          * @return $this
+          */
+         public static function success(string $text_or_title, $text = ''){
+             return \Szykra\Notifications\FlashNotifier::success();
+         }
+ 
+         /**
+          * Show one time the error-level message
+          * @param $text_or_title
+          * @param string $text
+          * @return $this
+          */
+         public static function error(string $text_or_title, $text = ''){
+             return \Szykra\Notifications\FlashNotifier::error();
+         }
+ 
+         /**
+          * Show one time the warning-level message
+          * @param $text_or_title
+          * @param string $text
+          * @return $this
+          */
+         public static function warning(string $text_or_title, $text = ''){
+             return \Szykra\Notifications\FlashNotifier::warning();
+         }
+ 
+         /**
+          * Show one time the info-level message
+          * @param $text_or_title
+          * @param string $text
+          * @return $this
+          */
+         public static function info(string $text_or_title, $text = ''){
+             return \Szykra\Notifications\FlashNotifier::info();
+         }
+ 
+     }
+ 
+ ```
+
 ## License
 
 The MIT License. Copyright (c) 2014 - 2015 Szymon Krajewski.
